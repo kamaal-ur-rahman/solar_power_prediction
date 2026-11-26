@@ -14,8 +14,14 @@ prediction_history = []
 BASE_DIR = Path(__file__).resolve().parent
 MODEL_DIR = BASE_DIR / "Model"
 
-model = joblib.load(MODEL_DIR / "solar_power_model.joblib")
+model = joblib.load(MODEL_DIR / "solar_power_model_compressed.joblib")
 feature_names = joblib.load(MODEL_DIR / "feature_names.joblib")
+
+print("MODEL FEATURES:")
+print(model.feature_names_in_)
+
+print("\nSAVED FEATURE NAMES:")
+print(feature_names)
 
 
 # Request models
